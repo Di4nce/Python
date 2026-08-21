@@ -14,6 +14,7 @@ elif format == "2:1":
 else:
     print("Du har valgt et ugyldig format, bedre lykke neste gang!")
     sys.exit(0)
+    # kunne dette løses med en while loop for å gå tilbake til begynnelsen?
 
 diagonal = float(input("Skriv inn diagonalen i tommer: "))
 
