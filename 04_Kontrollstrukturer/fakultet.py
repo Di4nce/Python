@@ -12,7 +12,9 @@ while not(har_gyldig_verdi):
     try:
         fakultet_av = int(input("Fakultet av: "))
     except ValueError:
-        fakultet_av = -1    # Ikke et positivt heltall
+        # fakultet_av = -1    # Ikke et positivt heltall, forbedret koden på de to linjene nedenfor
+        print("Du må skrive inn ett lovelig heltall!")
+        continue
     if fakultet_av > 0:
         har_gyldig_verdi = True
     else:
