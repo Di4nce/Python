@@ -6,17 +6,18 @@ sum_annet = 0
 def skriv_inn_pris():
     mangler_verdi = True
     while mangler_verdi: # Laget en while løkke slik at om man taster feil så prøver man igjen
+        pris = input("Pris: ")
+        if pris == "":
+            print("Tast inn et tall!")
+            continue # Tilbake til start istedet for å returne none
         try:
-            pris = float(input("Pris: ")) # La til float her i stedet
+            pris = float(pris) # La til float her i stedet
         except ValueError:
             print("Feilformatert pris")
             continue # Tilbake til start istedet for å returne none
-        # if pris == "":
-        #    print("Tast inn et tall!") Dette trengs ikke lenger, eller så må den legges inn før try, og dele opp input
         return round(pris, 2) # Retunerte ikke en pris, la til en avrunding allerede her
-        # try:
-        #    pris = float(pris) # Dette tror jeg ikke trengs, ser ikke helt hensikten?
-
+        # Trenger ikke en mangler_verdi = False, siden løkken avsluttes av return
+        
 def skriv_inn_vartype(pris):
     global sum_mat      # global for å hente inn eksterne variabler og kunne endre disse i funksjonen.
     global sum_drikke
