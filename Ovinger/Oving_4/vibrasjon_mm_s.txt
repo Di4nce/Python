@@ -1,0 +1,17 @@
+# Vibrasjonshastighet (ISO 10816-konsept)
+3.2 mm/s
+2,8
+  4.1mm/s
+5.9 MM/S
+not a number
+0.9
+6.7 mm/s
+# etter innstramming:
+2.1 mm/s
+NaN
+ 3,05 MM/S
+2.7
+1.9 mm/s
+1.7
+1
+0.9
