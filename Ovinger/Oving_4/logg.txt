@@ -1,6 +1,8 @@
+Kommentar i linje 1
 Feil eller manglende ms i linje 3
 Feil eller manglende ms i linje 5
 Feil eller manglende ms i linje 6
+Kommentar i linje 7
 Feil eller manglende ms i linje 8
 Feil eller manglende ms i linje 10
 Feil eller manglende ms i linje 11
