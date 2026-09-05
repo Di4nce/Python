@@ -1,0 +1,7 @@
+Antall gyldige målinger: 4
+Sum responstider: 44.6
+Minste responstid: 9.7
+Største responstid: 12.3
+Gjennomsnittet var: 11.15
+For høye målinger: 0
+Ok målinger: 4

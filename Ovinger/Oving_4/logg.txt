@@ -12,3 +12,10 @@ Feil eller manglende ms i linje 15
 Feil eller manglende ms i linje 16
 Feil eller manglende ms i linje 17
 Feil eller manglende ms i linje 18
+ 
+Antall gyldige målinger: 4
+Ignorerte linjer: 2
+Linjer med feil: 12
+Minimum: 9.7
+Maksimum: 12.3
+Gjennomsnitt: 11.15
