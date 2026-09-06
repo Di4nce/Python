@@ -1,6 +1,6 @@
 def skriv_logg(melding, linje):
     logg = open("Ovinger/Oving_4/logg.txt", "a", encoding="UTF-8")  # Kunne brukt with open, da hadde jeg sluppet å lukke
-    logg.write(f"{melding} i linje {linjenummer}. ({linje})\n")
+    logg.write(f"{melding} i linje {linjenummer}. Innhold i linje: {linje}")
     logg.close()
 
 def rapport_logg(melding, tall):
@@ -37,13 +37,13 @@ try:    # Tester om gyldig fil og at skript virkerrapport_logg("Minimum", round(
                 enhet = 1   # Standard enhet for ms, og antar om ikke noe står så bruker vi ms
                 beskrivelse = "ms"
             linjenummer += 1
-            linje_strip = linje.strip(" ")
-            if linje_strip[0] == "#":
+            linje_strip = linje.strip()
+            if not linje_strip: # Skal hoppe over tomme linjer og linjer med bare \n
                 skriv_logg("Kommentar", linje)
                 tom_linje += 1
                 continue
-            elif not linje_strip: # Skal hoppe over tomme linjer og linjer med bare \n
-                skriv_logg("Tomt")
+            elif linje_strip[0] == "#":
+                skriv_logg("Tomt", linje)
                 tom_linje +=1
                 continue
             elif "," in linje_strip:
@@ -59,7 +59,7 @@ try:    # Tester om gyldig fil og at skript virkerrapport_logg("Minimum", round(
                 elif tid < 15:
                     ok_maaling += 1
                 responstider.append(tid)
-            except:
+            except ValueError:
                 skriv_logg("Feil", linje)
                 feil_linje += 1
 except FileNotFoundError:       # Hvis Try ikke virker og får error (som skrevet her)
@@ -73,35 +73,41 @@ antall = len(responstider)
 print("Antall gyldige målinger:", antall)
 rapport += "Antall gyldige målinger: " + str(antall) + "\n" # Lage en def med to atributter her enklere?
 
-sum = sum(responstider)
-print("Sum responstider:", sum)
-rapport += "Sum responstider: " + str(sum) + "\n"
+if antall == 0:
+    print("Ingen gyldige målinger")
+    rapport += "Ingen gyldige målinger"
+    skriv_rapport(rapport)
+else:
+    summen = sum(responstider)
+    print("Sum responstider:", summen)
+    rapport += "Sum responstider: " + str(summen) + "\n"
 
-minimum = min(responstider)
-print("Minste responstid:", minimum)
-rapport += "Minste responstid: " + str(minimum) + "\n"
+    minimum = min(responstider)
+    print("Minste responstid:", minimum)
+    rapport += "Minste responstid: " + str(minimum) + "\n"
 
-maksimum = max(responstider)
-print("Største responstid:", maksimum)
-rapport += "Største responstid: " + str(maksimum) + "\n"
+    maksimum = max(responstider)
+    print("Største responstid:", maksimum)
+    rapport += "Største responstid: " + str(maksimum) + "\n"
 
-gjennomsnitt = sum / antall
-print("Gjennomsnittet var:", gjennomsnitt )
-rapport += "Gjennomsnittet var: " + str(gjennomsnitt) + "\n"
+    gjennomsnitt = summen / antall
+    print("Gjennomsnittet var:", gjennomsnitt )
+    rapport += "Gjennomsnittet var: " + str(gjennomsnitt) + "\n"
 
-print("For høye målinger:", for_hoy_maaling)
-rapport += "For høye målinger: " + str(for_hoy_maaling) + "\n"
+    print("For høye målinger:", for_hoy_maaling)
+    rapport += "For høye målinger: " + str(for_hoy_maaling) + "\n"
 
-print("Ok målinger:", ok_maaling)
-rapport += "Ok målinger: " + str(ok_maaling) + "\n"
+    print("Ok målinger:", ok_maaling)
+    rapport += "Ok målinger: " + str(ok_maaling) + "\n"
 
-# print(rapport)
-skriv_rapport(rapport)
+    # print(rapport)
+    skriv_rapport(rapport)
 
-rapport_logg("", "")
+    rapport_logg("Minimum:", round(minimum, 2))
+    rapport_logg("Maksimum:", round(maksimum, 2))
+    rapport_logg("Gjennomsnitt:", round(gjennomsnitt, 2))
+
+rapport_logg("", "")    # Lager en mellomrom i loggen til rapporten
 rapport_logg("Antall gyldige målinger:", antall)
 rapport_logg("Ignorerte linjer:", tom_linje)
 rapport_logg("Linjer med feil:", feil_linje)
-rapport_logg("Minimum:", round(minimum, 2))
-rapport_logg("Maksimum:", round(maksimum, 2))
-rapport_logg("Gjennomsnitt:", round(gjennomsnitt, 2))

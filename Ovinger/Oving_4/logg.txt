@@ -1,21 +1,12 @@
 Tomt i linje 1. Innhold i linje: # Responstider for /api/v1/auth
-Feil eller manglende ms i linje 3. Innhold i linje: 10.8
-Feil eller manglende ms i linje 5. Innhold i linje: timeout
-Feil eller manglende ms i linje 6. Innhold i linje: 15.1ms
+Feil i linje 5. Innhold i linje: timeout
 Tomt i linje 7. Innhold i linje: # peak trafikk:
-Feil eller manglende ms i linje 8. Innhold i linje: 22.9
-Feil eller manglende ms i linje 10. Innhold i linje: feil: socket reset
-Feil eller manglende ms i linje 11. Innhold i linje: 8.9
-Feil eller manglende ms i linje 12. Innhold i linje: 15,5
-Feil eller manglende ms i linje 13. Innhold i linje:   12.9
-Feil eller manglende ms i linje 15. Innhold i linje: -
-Feil eller manglende ms i linje 16. Innhold i linje: 6.7   
-Feil eller manglende ms i linje 17. Innhold i linje: 7
-Feil eller manglende ms i linje 18. Innhold i linje: 9 
+Feil i linje 10. Innhold i linje: feil: socket reset
+Feil i linje 15. Innhold i linje: -
+Minimum: 6.7
+Maksimum: 22.9
+Gjennomsnitt: 11.8
  
-Antall gyldige målinger: 4
+Antall gyldige målinger: 13
 Ignorerte linjer: 2
-Linjer med feil: 12
-Minimum: 9.7
-Maksimum: 12.3
-Gjennomsnitt: 11.15
+Linjer med feil: 3
