@@ -1,17 +1,17 @@
-Kommentar i linje 1
-Feil eller manglende ms i linje 3
-Feil eller manglende ms i linje 5
-Feil eller manglende ms i linje 6
-Kommentar i linje 7
-Feil eller manglende ms i linje 8
-Feil eller manglende ms i linje 10
-Feil eller manglende ms i linje 11
-Feil eller manglende ms i linje 12
-Feil eller manglende ms i linje 13
-Feil eller manglende ms i linje 15
-Feil eller manglende ms i linje 16
-Feil eller manglende ms i linje 17
-Feil eller manglende ms i linje 18
+Tomt i linje 1. Innhold i linje: # Responstider for /api/v1/auth
+Feil eller manglende ms i linje 3. Innhold i linje: 10.8
+Feil eller manglende ms i linje 5. Innhold i linje: timeout
+Feil eller manglende ms i linje 6. Innhold i linje: 15.1ms
+Tomt i linje 7. Innhold i linje: # peak trafikk:
+Feil eller manglende ms i linje 8. Innhold i linje: 22.9
+Feil eller manglende ms i linje 10. Innhold i linje: feil: socket reset
+Feil eller manglende ms i linje 11. Innhold i linje: 8.9
+Feil eller manglende ms i linje 12. Innhold i linje: 15,5
+Feil eller manglende ms i linje 13. Innhold i linje:   12.9
+Feil eller manglende ms i linje 15. Innhold i linje: -
+Feil eller manglende ms i linje 16. Innhold i linje: 6.7   
+Feil eller manglende ms i linje 17. Innhold i linje: 7
+Feil eller manglende ms i linje 18. Innhold i linje: 9 
  
 Antall gyldige målinger: 4
 Ignorerte linjer: 2
