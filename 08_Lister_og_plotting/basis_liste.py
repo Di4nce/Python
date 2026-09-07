@@ -17,6 +17,7 @@ print(lista)
 
 print(len(lista))
 
+# bruker en for-løkke for å gå gjennom listen
 print("\n test for løkke")
 for element in lista:
     print(element)
