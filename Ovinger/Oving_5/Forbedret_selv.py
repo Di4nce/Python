@@ -2,8 +2,8 @@ import csv
 import matplotlib.pyplot as plt
 
 # Filbanen til CSV-fila. Denne er relativ til mappa "Ovinger/Oving_5"
-filsti = "Ovinger/Oving_5/timestrafikk_sykkelmotorveien_juni_2026.csv"
-# filsti = "Ovinger/Oving_5/timestrafikk_sykkelmotorveien_juni_2026_innlagte_feil.csv" # Til å teste robusthet
+#filsti = "Ovinger/Oving_5/timestrafikk_sykkelmotorveien_juni_2026.csv"
+filsti = "Ovinger/Oving_5/timestrafikk_sykkelmotorveien_juni_2026_innlagte_feil.csv" # Til å teste robusthet
 
 # Be brukeren skrive inn en dato. Fila inneholder data fra 2026-06-01 til 2026-06-08
 dato_valgt = input("Skriv inn en dato (format ÅÅÅÅ-MM-DD, f.eks. 2026-06-03): ")
@@ -39,10 +39,13 @@ with open(filsti, "r", encoding="utf-8") as fil:
 
             # Vi er kun interessert i totalsummen for hver retning,
             # ikke tallene for hvert enkelt felt (kjørefelt)
-            if retning == "Totalt i retning Sandnes":
-                sandnes_tall[time] = int(trafikkmengde)
-            elif retning == "Totalt i retning Stavanger":
-                stavanger_tall[time] = int(trafikkmengde)
+            try:        # La inn en try her, dersom en har feil i traffikkmengden, så leser den det som 0
+                if retning == "Totalt i retning Sandnes":
+                    sandnes_tall[time] = int(trafikkmengde)
+                elif retning == "Totalt i retning Stavanger":
+                    stavanger_tall[time] = int(trafikkmengde)
+            except ValueError:
+                sandnes_tall[time] = 0
 
 # Plotter de to kurvene i samme plott
 plt.plot(timer, sandnes_tall, label="Mot Sandnes")

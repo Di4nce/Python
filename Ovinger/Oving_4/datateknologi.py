@@ -65,7 +65,7 @@ if antall == 0:
     print("Ingen gyldige målinger")
 else:
     summen = sum(responstider)
-    print("Sum responstider:", sum)
+    print("Sum responstider:", summen)
     rapport += "Sum responstider: " + str(summen) + "\n"
 
     minimum = min(responstider)
