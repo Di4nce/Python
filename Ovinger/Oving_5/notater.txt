@@ -1,0 +1,25 @@
+b) Virker scriptet fra a)?
+Nei, ikke på hele fila. Jeg testet det opprinnelige scriptet med 2026-06-03 mot feil-fila, og det krasjer:
+ValueError: invalid literal for int() with base 10: '-'
+Feil-fila har fått noen celler i Trafikkmengde-kolonnen byttet ut med - 
+og Feil i stedet for tall (for eksempel kl. 04:00 og 06:00 den 3. juni), og det gjør at int(trafikkmengde) 
+feiler. For andre datoer (04.–08. juni) virker scriptet helt fint, siden feilene bare er lagt 
+inn på et par rader 2.–3. juni.
+
+c) Hvor lesbart er scriptet?
+Bra: korte, beskrivende variabelnavn (sandnes_tall, stavanger_tall, dato_valgt), kommentarer som forklarer 
+hvorfor ting gjøres, og en enkel lineær struktur (åpne fil → gå gjennom rader → plott) uten dype nøstinger.
+Litt svakt: kolonnene hentes med faste tall (rad[5], rad[6], rad[8], rad[9]), og man må se på CSV-headeren 
+for å skjønne hva de betyr. Det er lett lesbart for oss nå, men litt sårbart for feiltolkning senere.
+
+d) Hvor robust er scriptet?
+Feilformatert dato? Nei — det oppdages ikke. Skriver du f.eks. 03.06.2026, finner løkka bare aldri en rad 
+der dato == dato_valgt, og du får et helt tomt (stille) plott uten noen feilmelding.
+Manglende data i én retning en time? Ja, det takler scriptet faktisk greit, siden listene er forhåndsfylt 
+med 0 — mangler en rad, blir verdien bare stående som 0.
+Andre robusthetsproblemer:
+Ugyldige tallverdier (-, Feil i Trafikkmengde) krasjer hele scriptet, som vist i b).
+Hvis fila ikke ligger på den relative stien, får du en litt kryptisk FileNotFoundError i stedet for en 
+forklarende melding.
+Ingen tilbakemelding hvis datoen rett og slett ikke finnes i fila (f.eks. 2026-07-01) — du får bare et 
+tomt plott.
