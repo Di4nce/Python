@@ -1,0 +1,124 @@
+ Grunnleggende programmering (DAT120)
+Emnebeskrivelse for studieåret:
+Fakta
+
+Emnekode
+DAT120
+
+Vekting (stp)
+10
+
+Semester undervisningsstart
+Høst
+
+Undervisningsspråk
+Norsk
+
+Antall semestre
+1
+
+Vurderingssemester
+Høst
+
+Timeplan
+Vis timeplan
+
+Litteratur
+Pensumlisten finner du i Leganto
+Sideinnhold
+Introduksjon
+
+Studenten skal lære seg hvordan å skrive og kjøre dataprogrammer i programmeringsspråket Python. Studenten skal lære seg det grunnleggende om hvordan en datamaskin virker. Studenten lære seg grunnleggende IKT sikkerhet. Studenten skal lære grunnleggende bevissthet rundt kunstig intelligens.
+Innhold
+
+Programmering i språket Python. Emnet skal gi en grunnleggende forståelse for strukturert og objektorientert programmering og evnen til å skrive og kjøre egendefinerte programmer. Studenten skal lære hvordan å bruke ferdigdefinerte funksjoner og klasser, samt hvordan å lage sine egne funksjoner og klasser. Et viktig konsept er hvordan å dele opp et problem i moduler og så lage modulene hver for seg. Modulene kan være funksjoner eller klasser. Studentene skal lære seg enkel testing av modulene de har laget. Studentene skal lære seg hvordan programmet deres kan ta imot beskjeder fra brukeren. Studentene skal lære seg hvordan programmet deres kan lese data fra filer og skrive data til filer. Studentene skal lære seg grunnleggende bruk av Python datastrukturene liste, tuple, mengde og dictionary.
+
+Studentene skal også lære seg det grunnleggende om hvordan en datamaskin er bygd opp samt det grunnleggende om datasikkerhet.
+
+Store språkmodeller er en type kunstig intelligens som kan brukes til programmering i tillegg til å lage vanlig tekst. Derfor trenger studenten noe kunnskap om kunstig intelligens og hvordan å bruke det for å bli en god programmerer.
+Læringsutbytte
+
+Kunnskap
+
+    Ha en grunnleggende forståelse for hvordan en datamaskin virker
+    Ha en grunnleggende forståelse for strukturert programmering
+    Ha en grunnleggende forståelse for objektorientert programmering
+    Kunne begreper som variabler, datatyper, kontrollstrukturer, lister, funksjoner, klasser og objekter.
+    Ha en grunnleggende forståelse for datasikkerhet
+    Vite hva en stor språkmodell er og vite hva kunstig intelligens er
+
+Ferdigheter
+
+    Kunne løse programmeringsoppgaver ved bruk av Python som programmeringsspråk
+    Kunne skrive og kjøre egendefinerte programmer ved bruk av klasser og objekter, funksjoner, kontrollstrukturer og lister.
+    Kunne bruke metoder fra ferdigdefinerte klasser, opprette egendefinerte klasser og objekter og kunne opprette kommunikasjon mellom objekter.
+    Kunne grunnleggende bruk av et versjonskontrollsystem (Git)
+    Kunne forklare, teste og kvalitetssikre enkel Python-kode som bygger på konsepter fra pensum i DAT120, også der KI-verktøy har vært brukt som støtte
+
+Generell kompetanse
+
+    Kunne planlegge og kode kjørbare dataprogrammer
+
+Forkunnskapskrav
+Ingen
+Eksamen / vurdering
+Skriftlig eksamen
+
+Vekt
+1/1
+
+Varighet
+4 Timer
+
+Karakter
+Bokstavkarakterer
+
+Hjelpemiddel
+Egne håndskrevne notater eller trykte notater 1), Godkjent kalkulator
+
+Eksamenssystem
+WISEflow
+
+1) Du kan ha med to A4-ark med egne notater på eksamen. Arkene kan være håndskrevet eller maskinskrevet. Du har lov til å skrive på begge sider.
+
+Dette emnet har digital eksamen.
+Vilkår for å gå opp til eksamen/vurdering
+Obligatoriske innleveringsoppgaver
+
+Det blir totalt gitt 10 øvinger i emnet. De to første øvingene er frivillige. De resterende åtte er obligatoriske og må være godkjent for å få gå opp til eksamen.
+
+Gjennomføring av obligatoriske øvinger skal gjøres til de tider og i de grupper som er oppsatt og publisert på Canvas. Fravær på grunn av sykdom eller av andre årsaker skal snarest mulig kommuniseres til laboratorie- eller fagansvarlig. Det kan ikke påregnes å få godkjent øvinger utenom oppsatt tid hvis dette ikke er kommunisert og ny avtale gjort.
+
+Konsekvensen av at du ikke har fått godkjent øvingsoppgavene er at du ikke får gå opp til eksamen i faget.
+Arbeidsformer
+
+Emnet vil ha seks forelesningstimer i starten og fire forelesningstimer resten av semesteret.
+
+Det vil være mellom 4 og 8 øvingstimer i uka hvor studentene kan få hjelp med de obligatoriske innleveringsoppgavene.
+
+I dette emnet har studentene felles undervisning i deler av semesteret med studenter som tar DAT125 Introduksjon til programmering på 5 studiepoeng.
+Bruk av KI som studiestøtte i studiearbeidet
+KI-verktøy kan brukes som læringsstøtte i DAT120, men skal aldri erstatte programmeringsferdighetene emnet skal bygge — å skrive, forstå og feilsøke egne Python-programmer er nettopp det du selv skal mestre. Ulike øvinger vil gi ulik instruks i hvordan KI kan brukes. I noen øvinger skal du lære det grunnleggende helst uten å bruke KI mens i andre skal du prøve ut KI som verktøy til programmering. Nyttige bruksområder er å be KI forklare et begrep (f.eks. hvordan en løkke virker, hva objektorientering innebærer, eller hvordan en datatype brukes), å forklare en feilmelding i kode du selv har skrevet, eller å lage øvingsoppgaver til selvtesting før eksamen. Du er selv ansvarlig for kritisk å vurdere det KI produserer, og all bruk av KI i vurdert arbeid skal følge emnets retningslinjer.
+Overlapping
+Emne 	Reduksjon (SP)
+Grunnleggende programmering (DAT110_1) , Grunnleggende programmering (DAT120_1) 	7
+Objektorientert programmering (DAT100_1) , Grunnleggende programmering (DAT120_1) 	5
+Grunnleggende programmering (DAT120_1) , Introduksjon til Programmering (DAT125_1) 	5
+Åpent for
+Åpent emne for alle registrert med kravene til generell studiekompetanse (GSK).
+Opptakskrav
+Generell studiekompetanse (GSK).
+Emneevaluering
+Fakultetet avgjør om det skal gjennomføres tidligdialog i alle emner eller i utvalgte grupper av emner. Formålet er å få tilbakemeldinger fra studentene for forbedringer i semesteret. I tillegg skal det gjennomføres en digital emneevaluering minst hvert tredje år for å innhente studentenes erfaringer.
+Kontakt
+Ansvarlig laboratorieøvelser:
+Per Jotun
+Instituttleder:
+Tom Ryen
+Emneansvarlig:
+Erlend Tøssebro
+
+Tilbys av
+Det teknisk-naturvitenskapelige fakultet
+
+Institutt for data- og elektroteknologi
