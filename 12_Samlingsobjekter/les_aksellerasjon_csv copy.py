@@ -1,16 +1,20 @@
 import csv
+import matplotlib.pyplot as plt
 
 # Ved strenger quotechar='"'
 with open("fil sti og filnavn", "r", encoding="Utf-8") as filen:
-    filen.readline()
     tidspunkter = list()
-    aksellerasjoner = list()
-    csv_filen = csv.reader(filen, delimiter=";")
+    aksellerasjon = list()
+    
+    csv_filen = csv.DictReader(filen, delimiter=";")
     for verdier in csv_filen:
-        tidspunkt = float(verdier[0])
-        aksellerasjon = float(verdier[4])
+        tidspunkt = float(verdier["time (s)"])
+        aksellerasjon = float(verdier["Absolut acceleration (m/s^2)"])
         tidspunkter.append(tidspunkt)
-        aksellerasjoner.append(aksellerasjon)
+        aksellerasjon.append(aksellerasjon)
 
 print(tidspunkter)
-print(aksellerasjoner)
+print(aksellerasjon)
+
+plt.plot(tidspunkt, aksellerasjon)
+plt.show
