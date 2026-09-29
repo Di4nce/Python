@@ -1,9 +1,9 @@
-from collections import defaultdict
+# from collections import defaultdict   # Anbefales ikke brukt
 
-# Lager et tomt dictionary, disse to linjene gjør det samme
+# Lager et tomt dictionary, disse tre linjene gjør det samme
 # telefonkatalog = dict()
-# telefonkatalog = {}
-telefonkatalog = defaultdict(int)
+telefonkatalog = {}
+# telefonkatalog = defaultdict(int)
 
 # Setter inn nøkkel "Jan Johansen" med verdi 12345678
 telefonkatalog["Jan Johansen"] = 12345678
