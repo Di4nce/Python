@@ -1,0 +1,4 @@
+-           Oslo    Trondheim   Tromsø
+Oslo        0       486         1743
+Trondheim   486     0           1130
+Tromsø      1743    1130        0   

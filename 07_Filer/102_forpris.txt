@@ -1,0 +1,5 @@
+Brød 30
+Kjøtt 80
+Egg 40
+Epler 35
+Salat 25
