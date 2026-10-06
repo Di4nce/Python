@@ -8,6 +8,33 @@ class Punkt:
         self.x_koordinat = x_koordinat
         self.y_koordinat = y_koordinat
 
+    @property
+    def x_koordinat(self):
+        return self.__x_koordinat
+
+    @x_koordinat.setter
+    def x_koordinat(self, ny_verdi):
+        if ny_verdi < 0:
+            raise ValueError("X-koordinat må være positiv")
+        self.__x_koordinat = ny_verdi
+    
+
+    @property
+    def r(self):
+        return self.avstand_origo()
+
+    @r.setter
+    def r(self, ny_verdi):
+        if ny_verdi < 0:
+            raise ValueError("R kan ikke være negativ!")
+        gammel_theta = self.theta
+        self.x_koordinat = ny_verdi*math.cos(gammel_theta)
+        self.y_koordinat = ny_verdi*math.sin(gammel_theta)
+
+    @property
+    def theta(self):
+        return math.acos(self.x_koordinat/self.r)
+
     # Spørremetode (query)
     def avstand_origo(self): # Alltid self som en av parameterne
         return math.sqrt(self.x_koordinat**2 + self.y_koordinat**2)
@@ -77,56 +104,16 @@ if __name__ == "__main__":
     punkt1 = Punkt()
     punkt2 = Punkt(3, 4)
     punkt3 = punkt1
-    punkt1.y_koordinat = 3
-    print(punkt3.x_koordinat)
-    print(punkt1.y_koordinat) # Henter ut verdien inne i objekt
-    print(punkt2.y_koordinat)
-    avstand = punkt2.avstand_origo()
-    print(avstand)
-    avstand = punkt1.avstand_origo()
-    print(avstand)
-    punkt1.flytt(6, 1)
-    avstand = punkt1.avstand_origo()
-    print(avstand)
-    print(punkt1)
-    avstand = punkt1.avstand(punkt2)    # Bruk av metode (funksjonn inne i klassen)
-    print(avstand)
-    avstand = avstanden(punkt1, punkt2) # Bruk av funksjon
-    print(avstand)
 
-    # Eksempe
-    print(punkt1)
-    funksjon_endrer_objekt(punkt1)
-    print(punkt1)   # Punktet er en mutable objekt lik som en liste
+    print(punkt2.x_koordinat)
+    print(punkt2.r)
+    print(punkt2.theta)
 
-    linje1 = RettLinje(punkt1, punkt2)
-    print(linje1)
-    Punkt4 = Punkt(1, 7)
-    linje2 = RettLinje(punkt2, punkt3)
-    print(linje2)
-    punkt2.flytt(1,1)
-    print(linje1)
-    print(linje2)
+    punkt2.r = 6  #Får en atributeError når en forsøker å skrive til den, en readonly-egenskap
+    print(punkt2)
+    print(punkt2.r)
+    print(punkt2.theta)
 
-    # Er lik operatoren og is-operatoren, må defineres med __eq__ ellers er de ulike
-    punkt5 = Punkt(6, 8)
-    # punkt6 = Punkt(6, 8)
-    punkt6 =punkt5.kopi()
-    if punkt1 == punkt3:
-        print("De to punktene er like")
-    else:
-        print("De to punktene er ulike")
-    #   Lister oppfører seg anderledes, her sjekkes innholdet, i stedet for om selve objektet/referansen er lik/ulik
-    liste5 = [1, 2, 3]
-    liste6 = [1, 2, 3]
-    if liste5 == liste6:
-        print("De to objektene er like")
-    else:
-         print("De to objektene er ulike")
-    # Is operatoren sjekker alltid om det er samme objekt/referanse (mens == kan endres med __eq__)
-    if punkt1 is punkt3:
-        print("De to punktene er samme objekt")
-    else:
-        print("De to punktene er ulik objekt")
-
-    
+    punkt2.x_koordinat = 7
+    print(punkt2)
+    # print(punkt2.__x_koordinat) vil ikke virke
