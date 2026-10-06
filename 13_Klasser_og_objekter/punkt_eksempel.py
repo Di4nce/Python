@@ -25,16 +25,31 @@ class Punkt:
     # Spørremetode
     # Strengrepresentasjon som skal vises til brukeren
     def __str__(self): # Spesialmetode for å si hvordan objektet skal skrives ut
-        return f"Punkt: {self.x_koordinat}, {self.y_koordinat}"
+        return f"Punkt: ({self.x_koordinat}, {self.y_koordinat})"
 
     # Strengrepresentasjon til intern bruk for utvikleren
     def __repr__(self):
         return str(self)
 
 class RettLinje:
-    def __init__(self, start: Punkt, slutt: Punkt):
+    def __init__(self, start: Punkt, slutt = None):
         self.start = start
-        self.slutt = slutt
+        if slutt is None:
+            self.slutt = Punkt(0,0)
+        else:
+            self.slutt = slutt
+
+    def __str__(self):
+        return f"Rett linje, start ({self.start}) og slutt ({self.slutt})."
+
+    def lengde(self):
+        return avstand(self.start, self.slutt)
+
+    def flytt(self, avstand_x, avstand_y):
+        self.start.flytt(avstand_x, avstand_y)
+        self.slutt.flytt(avstand_x, avstand_y)
+
+    
 
 def avstanden(punkt1: Punkt, punkt2: Punkt):
     xdiff = punkt1.x_koordinat - punkt2.x_koordinat
@@ -67,6 +82,16 @@ if __name__ == "__main__":
     avstand = avstanden(punkt1, punkt2) # Bruk av funksjon
     print(avstand)
 
+    # Eksempe
     print(punkt1)
     funksjon_endrer_objekt(punkt1)
     print(punkt1)   # Punktet er en mutable objekt lik som en liste
+
+    linje1 = RettLinje(punkt1, punkt2)
+    print(linje1)
+    Punkt4 = Punkt(1, 7)
+    linje2 = RettLinje(punkt2, punkt3)
+    print(linje2)
+    punkt2.flytt(1,1)
+    print(linje1)
+    print(linje2)
