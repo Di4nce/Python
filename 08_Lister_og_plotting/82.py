@@ -7,5 +7,5 @@ tall = [1, 2, 3, 4]
 # tall[4] = 5 # list assignment index out of range
 
 # c
-tall.remove(1)
-tall.remove(1)
+# tall.remove(1)
+# tall.remove(1) # x not in list
