@@ -8,21 +8,29 @@ class Punkt:
         self.x_koordinat = x_koordinat
         self.y_koordinat = y_koordinat
 
+    # Definer X-property som eksplisitt property. Dette er funksjonen foe å
+    # hente x-koordinatet, på engelsk kalt "getter"
     @property
     def x_koordinat(self):
+        # Variabler med to underscores først er private og kun tilgjengelige
+        # inne i selve klassen
         return self.__x_koordinat
 
+    # Setter for x-koordinat
     @x_koordinat.setter
     def x_koordinat(self, ny_verdi):
         if ny_verdi < 0:
             raise ValueError("X-koordinat må være positiv")
         self.__x_koordinat = ny_verdi
     
-
+    # Getter den beregnete egenskapen r
     @property
     def r(self):
         return self.avstand_origo()
 
+    # Setter for den beregnete egenskapen r. Denne må regene ut
+    # hvordan egenskapene som faktisk lagres (X-koordinat og y-koordinat)
+    # må justeres hvis r endres mens theta forblir den samme.
     @r.setter
     def r(self, ny_verdi):
         if ny_verdi < 0:
@@ -31,6 +39,7 @@ class Punkt:
         self.x_koordinat = ny_verdi*math.cos(gammel_theta)
         self.y_koordinat = ny_verdi*math.sin(gammel_theta)
 
+    # Getter for den beregnede egenskapen theta
     @property
     def theta(self):
         return math.acos(self.x_koordinat/self.r)
@@ -55,7 +64,7 @@ class Punkt:
     # Spørremetode
     # Strengrepresentasjon som skal vises til brukeren
     def __str__(self): # Spesialmetode for å si hvordan objektet skal skrives ut
-        return f"Punkt: ({self.x_koordinat}, {self.y_koordinat})"
+        return f"Punkt: ({self.x_koordinat:.2f}, {self.y_koordinat:.2f})" # 2 siffer etter .
 
     # Strengrepresentasjon til intern bruk for utvikleren
     def __repr__(self):
@@ -103,17 +112,30 @@ def funksjon_endrer_objekt(punktet: Punkt):
 if __name__ == "__main__":
     punkt1 = Punkt()
     punkt2 = Punkt(3, 4)
+
+    # Setter variabelen punkt3 til å refere til samme objekt som punkt1
     punkt3 = punkt1
 
+    # Henter ut verdiene til egenskapene r og theta
+    print("Illustrer r og theta")
+    print(punkt2)
     print(punkt2.x_koordinat)
     print(punkt2.r)
     print(punkt2.theta)
 
+    
     punkt2.r = 6  #Får en atributeError når en forsøker å skrive til den, en readonly-egenskap
     print(punkt2)
     print(punkt2.r)
     print(punkt2.theta)
 
+    # Setter X-koordinaten
+    print("\nR og theta etter endring av r")
     punkt2.x_koordinat = 7
     print(punkt2)
+    print(punkt2.r)
+    print(punkt2.theta)
+    print(math.degrees(punkt2.theta))   # Theta i grader
     # print(punkt2.__x_koordinat) vil ikke virke
+
+    # print(punkt2.__x_koordinat) # kan ikke hente ut private metoder, får en atribute erroe
