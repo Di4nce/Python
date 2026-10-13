@@ -1,11 +1,12 @@
 # Lage et program som konverterer mellom ulige måleenheter for avstand.
 
-måleenheter = {"centimeter": 0.01, "tomme": 0.0254, "fot": 0.3048, "yard": 0.9144, "meter": 1,
-                "kilometer": 1000, "miles (engelsk)": 1609, "nautisk mil": 1842, "mil (skandinavisk)": 10000}
+måleenheter = {"centimeter": [0.01, "cm"], "tomme": [0.0254, "in"], "fot": [0.3048, "ft"], "yard": [0.9144, "yd"], "meter": [1, "m"],
+                "kilometer": [1000, "km"], "miles (engelsk)": [1609, "mi"], "nautisk mil": [1842, "nm"], "mil (skandinavisk)": [10000, "mil"]}
 
 print(måleenheter)
 
-tall = float(input("Skriv inn tall du ønsker konvertert fra: "))    # kunne lage en try /expect her ved behov
+tall = float(input("Skriv inn tall du ønsker konvertert fra: "))    
+# kunne laget try / expect loop med while her
 konvert_fra = input("Skriv inn måleenhet du ønsker konverter fra: ")
 konvert_til = input("Skriv inn måleenhet du ønsker konvertert til: ")
 
@@ -15,6 +16,7 @@ måleenhet_til = måleenheter[konvert_til]
 # print(måleenhet_fra)  # Til feilsøking
 # print(måleenhet_til)  # Til feilsøking
 
-nytt_tall = ((tall * måleenhet_fra) / måleenhet_til) # Tenkte feil, det skal være ganger (ikke dele) måleenhet_fra
+# Henter fra listen [0] er enhet i meter og [1] er kortform
+nytt_tall = ((tall * måleenhet_fra[0]) / måleenhet_til[0]) # Tenkte feil, det skal være ganger (ikke dele) måleenhet_fra
 
-print(f"Konvertering: {tall} {konvert_fra} blir {nytt_tall} {konvert_til}")
+print(f"Konvertering: {tall} {måleenhet_fra[1]} blir {nytt_tall} {måleenhet_til[1]}")
