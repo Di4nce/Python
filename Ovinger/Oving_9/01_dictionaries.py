@@ -3,14 +3,14 @@
 måleenheter = {"centimeter": [0.01, "cm"], "tomme": [0.0254, "in"], "fot": [0.3048, "ft"], "yard": [0.9144, "yd"], "meter": [1, "m"],
                 "kilometer": [1000, "km"], "miles (engelsk)": [1609, "mi"], "nautisk mil": [1842, "nm"], "mil (skandinavisk)": [10000, "mil"]}
 
-print(måleenheter)
+print(måleenheter.keys())
 
 tall = float(input("Skriv inn tall du ønsker konvertert fra: "))    
 # kunne laget try / expect loop med while her
 konvert_fra = input("Skriv inn måleenhet du ønsker konverter fra: ")
 konvert_til = input("Skriv inn måleenhet du ønsker konvertert til: ")
 
-måleenhet_fra = måleenheter[konvert_fra]    # Slår opp i dictionary for å finne verdi
+måleenhet_fra = måleenheter[konvert_fra]    # Slår opp i dictionary for å finne verdi (liste)
 måleenhet_til = måleenheter[konvert_til]  
 
 # print(måleenhet_fra)  # Til feilsøking
