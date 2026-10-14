@@ -32,7 +32,12 @@ class Bibliotek:
             self.booker = []
     
     def legg_til_bok(self, bok):
-        self.booker.append(bok)
+        self.booker.append(bok) # Legger en bok-objekt til på listen
+
+    def vis_alle_boker(self):
+        print("Liste med bøker på biblioteket:")
+        for bok in self.booker:  # Printer alle bokene i booker-listen, kunne laget [0] index for bare navn
+            print(bok)
         
 
 # Oppretter noen bokobjekter
@@ -41,14 +46,39 @@ bok2 = Bok("Python for realfag, 3. utgave", "Finn Aakre Hugen og Marius Lysaker"
 bok3 = Bok("Objektorientert programmering med Python", "Henrik Hillestad Løvold")
 
 # Skriver ut informasjon om bøkene
-print(bok1)
-print(bok2)
-print(bok3)
+# print(bok1)
+# print(bok2)
+# print(bok3)
 
 # Til testing av oppgave c) laan_ut metoden
-print(bok1.antall_nå)
-bok1.laan_ut()
-print(bok1.antall_nå)
-bok1.lever_inn()
-print(bok1.antall_nå)
+# print(bok1.antall_nå)
+# bok1.laan_ut()
+# print(bok1.antall_nå)
+# bok1.lever_inn()
+# print(bok1.antall_nå)
 # bok1.lever_inn()  # Får en feil som forventet
+
+# sandnes_biblio = Bibliotek([bok1, bok3])  # Tester om biblioklassen virker
+# sandnes_biblio.vis_alle_boker()
+# sandnes_biblio.legg_til_bok(bok2)
+# sandnes_biblio.vis_alle_boker()
+
+avslutt = False
+while avslutt == False:
+    print("// Velkommen til bibliotekets menyside \\\\")
+    print("Tast 1 for å legge til ny bok")
+    print("Tast 2 for å låne en bok")
+    print("Tast 3 for å levere en bok")
+    print("Tast 4 for å skrive ut alle bøker")
+    print("Tast 5 for å avslutte")
+    kommando = input("Tast inn 1-5: ")
+    if kommando == "1":
+        ny_bok = input("Skriv inn ny bok: ") # hmmmmmmmmmm
+    elif kommando == "2":
+        pass
+    elif kommando == "3":
+        pass
+    elif kommando == "4":
+        pass
+    elif kommando == "5":
+        avslutt = True
