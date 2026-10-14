@@ -21,12 +21,12 @@ with open("Ovinger/Oving_9/maalenhet.csv", "r", encoding="Utf-8") as filen:
 # print(forkortelse)
 
 # slå sammen til dictonary, så kan jeg bare bruke samme script som tidligere
-måleenheter = {}
+maaleenheter = {}
 indeks = 0  # En counter for indeksen
 for verdi in maaleenhet:
-    måleenheter[verdi] = [antall_enheter[indeks], forkortelse[indeks]]
+    maaleenheter[verdi] = [antall_enheter[indeks], forkortelse[indeks]]
     indeks += 1
 
-# print(måleenheter)
+# print(maaleenheter)
 
 d.konvertering()    # henter inn script fra første del av oppgaven, så en slipper å skrive to ganger
