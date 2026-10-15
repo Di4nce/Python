@@ -58,7 +58,7 @@ bok3 = Bok("Objektorientert programmering med Python", "Henrik Hillestad Løvold
 # print(bok1.antall_nå)
 # bok1.lever_inn()  # Får en feil som forventet
 
-# sandnes_biblio = Bibliotek([bok1, bok3])  # Tester om biblioklassen virker
+sandnes_biblio = Bibliotek([bok1, bok3])  # Tester om biblioklassen virker
 # sandnes_biblio.vis_alle_boker()
 # sandnes_biblio.legg_til_bok(bok2)
 # sandnes_biblio.vis_alle_boker()
@@ -73,12 +73,37 @@ while avslutt == False:
     print("Tast 5 for å avslutte")
     kommando = input("Tast inn 1-5: ")
     if kommando == "1":
-        ny_bok = input("Skriv inn ny bok: ") # hmmmmmmmmmm
+        tittel = input("Skriv inn tittel for ny bok: ")
+        forfatter = input("Skriv inn forfatter på boken: ")
+        utgivelsesaar = input("Skriv inn utgivelsesåret: ")
+        antall = int(input("Skriv inn antall eksemplarer: "))
+        ny_bok = Bok(tittel, forfatter, utgivelsesaar, antall)
+        sandnes_biblio.legg_til_bok(ny_bok)
+        print("Følgende bok er lagt til: ", ny_bok.tittel)
     elif kommando == "2":
-        pass
+        print("Bøker på bibloteket: ")
+        for bok in sandnes_biblio.booker:
+            print(bok)
+        laan_bok = input("Skriv inn tittel på bok du ønsker å låne: ")
+        for bok in sandnes_biblio.booker:
+            if bok.tittel == laan_bok and bok.antall_nå > 0: # sjekker opp mot tittel og om den er tilgjengelig
+                print("Utlån registrert på", bok.tittel)
+                bok.laan_ut()
+            elif bok.tittel == laan_bok and bok.antall_nå <= 0:
+                print(f"{laan_bok} finnes ikke på biblioteket")
     elif kommando == "3":
-        pass
+        print("Bøker på bibloteket: ")
+        for bok in sandnes_biblio.booker:
+            print(bok)
+        lever_bok = input("Skriv inn tittel på bok du ønsker å levere inn: ")
+        for bok in sandnes_biblio.booker:
+            if bok.tittel == lever_bok and bok.antall_totalt != bok.antall_nå: # sjekker opp mot tittel
+                print("Innlevering registrert på", bok.tittel)
+                bok.lever_inn()
+            elif bok.tittel == lever_bok and bok.antall_totalt == bok.antall_nå:
+                print("Alle bøker er allerede levert inn. Forsøk et annet bibliotek.")
     elif kommando == "4":
-        pass
+        sandnes_biblio.vis_alle_boker()
     elif kommando == "5":
         avslutt = True
+    print("\n")
