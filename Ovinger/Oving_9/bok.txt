@@ -1,0 +1,2 @@
+Starting out with Python, 6. utgave.    Antall tilgjengelige: 1
+Objektorientert programmering med Python.    Antall tilgjengelige: 1
