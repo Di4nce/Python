@@ -131,4 +131,4 @@ while avslutt == False:
                     print(line)
     elif kommando == "7":
         avslutt = True
-    print("\n")
+    print("*************************************************************************")
