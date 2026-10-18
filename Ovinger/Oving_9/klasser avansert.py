@@ -84,8 +84,9 @@ while avslutt == False:
     print("Tast 4 for å liste opp alle bøker")
     print("Tast 5 for å skrive bøkene til fil")
     print("Tast 6 for å lese fra fil")
-    print("Tast 7 for å avslutte")
-    kommando = input("Tast inn 1-5: ")
+    print("Tast 7 for å søke etter bok")
+    print("Tast 8 for å avslutte")
+    kommando = input("Tast inn 1-8: ")
     print("\n")
 
     if kommando == "1":
@@ -167,7 +168,27 @@ while avslutt == False:
         with open("Ovinger/Oving_9/bok.txt", "r", encoding="utf-8") as filen:
                 for line in filen:
                     print(line)
-                    
+
     elif kommando == "7":
+        sokeord = input("Skriv inn søkeord, adskilt med mellomrom: ")
+        sokeord_sma = sokeord.lower()
+        sokeord_liste = sokeord_sma.split(" ")
+        soke_suksee = False
+        for bok in sandnes.booker: # Går gjennom alle bøkene
+            bok_funnet = True      # Starter med funnet
+            tittel_sma = bok.bok.tittel.lower()
+            for ord in sokeord_liste:   # Går gjennom ordene
+                if ord not in tittel_sma:
+                    bok_funnet = False            # Setter til feil bok om ett av ordene ikke passer (fra oppgaven)
+            if bok_funnet == True: # Sier ifra om vi gjør en match
+                print(f"Funnet bok med match på alle søkeord: {bok.bok.tittel}")
+                soke_suksee = True
+        if not soke_suksee:
+            print("Ingen bøker funnet med de søkeordene")
+
+        print("\n")
+        input("Trykk Enter på tastaturet for å gå tilbake til meny")
+
+    elif kommando == "8":
         avslutt = True
     print("*************************************************************************")
