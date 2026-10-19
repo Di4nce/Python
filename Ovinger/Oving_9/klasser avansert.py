@@ -164,10 +164,16 @@ while avslutt == False:
                 linje = bok.bok.tittel + ".    Antall tilgjengelige: " + str(bok.antall_naa) + "\n"
                 filen.write(linje)
 
+        print("\n")
+        print("Skrevet til fil bok.txt")
+        input("Trykk Enter på tastaturet for å gå tilbake til meny")
+
     elif kommando == "6":
         with open("Ovinger/Oving_9/bok.txt", "r", encoding="utf-8") as filen:
                 for line in filen:
                     print(line)
+        print("\n")
+        input("Trykk Enter på tastaturet for å gå tilbake til meny")
 
     elif kommando == "7":
         sokeord = input("Skriv inn søkeord, adskilt med mellomrom: ")

@@ -22,4 +22,5 @@ def konvertering():
 
     print(f"Konvertering: {tall} {maaleenhet_fra[1]} blir {nytt_tall} {maaleenhet_til[1]}")
 
-konvertering()
+if __name__ == "__main__":
+    konvertering()
