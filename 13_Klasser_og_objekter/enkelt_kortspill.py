@@ -19,12 +19,13 @@ class Spillkort:
     SPAR = 4
 
     def __init__(self, korttype, verdi):
+        self.__korttype = korttype
+        self.__verdi = verdi
         if self.korttype < 1 or self.korttype > 4:
             raise ValueError("gyldig kortype")
         if self.verdi < 1 or self.verdi > Spillkort.KONGE:
             raise ValueError(f"Ugyldig verdi: {verdi}")
-        self.__korttype = korttype
-        self.__verdi = verdi
+        
 
     # Lager gettere men ikke settere for korttype og verdi siden disse egenskapene
     # ikke skal
@@ -48,7 +49,7 @@ class Spillkort:
             resultat = "Hjerter "
         else:
             resultat = "Ugyldig korttype "
-        return resultat
+        
         if self.verdi <= 10:
             resultat += str(self.verdi)
         elif self.verdi == Spillkort.KNEKT:
@@ -57,6 +58,8 @@ class Spillkort:
             resultat += "Dame"
         elif self.verdi == Spillkort.KONGE:
             resultat += "Konge"
+
+        return resultat
 
 class Kortstokk:
     def __init__(self):
@@ -104,11 +107,11 @@ class Spiller:
         return poeng
 
     def __str__(self):
-        resulat = "Spiller: " + self.navn + "\n"
+        resultat = "Spiller: " + self.navn + "\n"
         resultat += "Hånda til spilleren: \n"
         for kort in self.haand:
             resultat += str(kort) + "\n"
-        resulat += f"Poengsum: {self.poengsum()} \n"
+        resultat += f"Poengsum: {self.poengsum()} \n"
         return resultat
 
 # Testekode
