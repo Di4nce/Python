@@ -150,6 +150,18 @@ def skriv_inn_positivt_tall(beskjed):
             mangler_verdi = False
     return positivt_tall
 
+def finn_vinner(spillere):
+    maks_poengsum = 0
+    vinnere = list()
+    for spiller in spillere:
+        if spiller.poengsum() > maks_poengsum:
+            maks_poengsum = spiller.poengsum()
+            vinnere.clear()
+            vinnere.append(spiller)
+        elif spiller.poengsum() == maks_poengsum:
+            vinnere.append(spiller)
+    return vinnere
+
 def kjor_spill():
     antall_spillere = skriv_inn_positivt_tall("Antall spillere: ")
     spillere = list()
@@ -157,10 +169,23 @@ def kjor_spill():
     stokken.lag_stokken()
     stokken.stokk()
     for i in range(antall_spillere):
-        navn = input(f"Skriv inn navn på spiller {i+1}")
+        navn = input(f"Skriv inn navn på spiller {i+1}: ")
         kort = stokken.trekk()
         spilleren = Spiller(navn, kort)
         spillere.append(spilleren)
+    for spiller in spillere:
+        print(spiller)
+    vinnere = finn_vinner(spillere)
+    while len(vinnere) > 1:
+        print("Flere vinnere, gir nye kort.")
+        for vinner in vinnere:
+            print(vinner)
+        for spiller in vinnere:
+            spiller.gi_kort(stokken.trekk())
+        vinnere = finn_vinner(spillere)
+    print("Vinneren er: ")
+    for vinner in vinnere:
+        print(vinner)
 
 if __name__ == "__main__":
     kjor_spill()
