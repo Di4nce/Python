@@ -16,12 +16,12 @@
 # Poeng: 3 poeng for hvert riktige kryss, -3 poeng for hvert feil kryss. Maksimalt 9 poeng, minimum
 # 0 poeng.
 # Velg ett eller flere alternativer
-# Forslag 1
-# Forslag 2
-# Forslag 3
-# Forslag 4
-# Forslag 5
-# Forslag 6
+# Forslag 1 [x]
+# Forslag 2 [ ]
+# Forslag 3 [x]
+# Forslag 4 [x]
+# Forslag 5 [ ]
+# Forslag 6 [ ]
 
  
 # Forslag 1
