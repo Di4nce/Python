@@ -4,3 +4,11 @@
 # skrive dette ut.
  
 # Formelen til volumet for ei kjegle: volum = 1/3(pi*(r**2)*h)
+
+import math
+radius = float(input("Skriv inn radius på kjeglen: "))
+hoyde = float(input("Skriv inn høyden til kjeglen: "))
+
+volum = 1/3*(math.pi*(radius**2)*hoyde)
+
+print(f"Volumet til kjeglen er {volum:.2f}")
