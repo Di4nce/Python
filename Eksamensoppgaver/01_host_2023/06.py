@@ -26,7 +26,16 @@
 # fartsgrense = float(input("Fartsgrense i km/t: "))
 # tid_aa_kjore(avstand_i_meter, fartsgrense)
 # print(tid_i_sekunder)
-# Skriv ditt svar her
+# Skriv ditt svar her:
+# MAngler en return og/eller endrer ikke en global variabel
+def tid_aa_kjore(avstand_i_meter, fart_i_kilometer_per_time):
+    tid_i_sekunder = avstand_i_meter / (fart_i_kilometer_per_time * 1000 / 3600)
+    return tid_i_sekunder
+
+avstand_i_meter = float(input("Avstand i meter: "))
+fartsgrense = float(input("Fartsgrense i km/t: "))
+tid_i_sekunder = tid_aa_kjore(avstand_i_meter, fartsgrense)
+print(tid_i_sekunder)
 
 # Deloppgave 2
 # Oppgavetekst: Skriv en funksjon som tar inn to lister. Funksjonen skal lage ei ny liste som bare
@@ -41,6 +50,7 @@
 #     return resultat
  
 # Skriv ditt svar her
+# Ja, dette skal virke som tiltenkt
 
 # Deloppgave 3
 # Oppgave: Skriv en funksjon som tar inn to lister med tall. Funksjonen skal lage ei ny liste hvor
@@ -55,7 +65,18 @@
 #         resultat.append(liste1[i] + liste2[i])
 #     return resultat
  
-# Skriv ditt svar her
+# Skriv ditt svar her:
+# Bruker lengden til liste1, selv om denne er lengst
+def sum_liste(liste1, liste2):
+    resultat = list()
+    if len(liste1) > len(liste2):
+        lengde = len(liste2)
+    else:
+        lengde = len(liste1)
+    for i in range(lengde):
+        resultat.append(liste1[i] + liste2[i])
+    return resultat
+
 
 # Deloppgave 4
 # Oppgave: Gitt klassene Punkt og Linje. Klassen Linje representerer ei linje som består av ei liste
@@ -84,8 +105,6 @@
 #         self.y_koordinat = y_koordinat
  
  
-# DAT120 eksamen høst 2023
-# 20/24
 # # Gitt, du kan anta at denne er korrekt
 # class Linje:
 #     def __init__(self, startpunkt, sluttpunkt):
@@ -111,3 +130,21 @@
 #     return Linje(punktliste[0], punktliste[1])
  
 # Skriv ditt svar her
+# Lager bare linje for de to første punktene, 
+# må bruke metoden for legg_til_punkt på linje-objektet for resterende
+def les_linje_fra_WKT(wkt_streng):
+    if wkt_streng.find('LINESTRING') == -1:
+        return None
+    punktliste = list()
+    punktliste_streng = wkt_streng[11:-1].split(',')    #5 10
+    for punkt in punktliste_streng:
+        koordinater = punkt.split(' ')
+        x_koordinat = float(koordinater[0])
+        y_koordinat = float(koordinater[1])
+        punktliste.append(Punkt(x_koordinat, y_koordinat))
+    linje = Linje(punktliste[0], punktliste[1]) 
+    for punkt in punktliste[2:]:
+        linje.legg_til_punkt(punkt)
+    return linje
+
+    
