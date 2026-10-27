@@ -146,5 +146,3 @@ def les_linje_fra_WKT(wkt_streng):
     for punkt in punktliste[2:]:
         linje.legg_til_punkt(punkt)
     return linje
-
-    
