@@ -3,7 +3,7 @@
 # kjeglen (r i formelen) og høyden til kjeglen (h i formelen). Etter å ha regnet ut volumet skal scriptet
 # skrive dette ut.
  
-# Formelen til volumet for ei kjegle: volum = 1/3(pi*(r**2)*h)
+# Formelen til volumet for ei kjegle: volum = 1/3*(pi*(r**2)*h)
 
 import math
 radius = float(input("Skriv inn radius på kjeglen: "))
