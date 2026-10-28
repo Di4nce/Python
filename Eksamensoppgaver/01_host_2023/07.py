@@ -15,3 +15,16 @@
  
 # Skriv et Python script som lar brukeren skrive inn antall linjer av Pascal's trekant den skal skrive
 # ut og så skriver ut det antall linjer.
+
+linjer = int(input("Skriv inn antall linjer: "))
+
+forrige = []
+for i in range(linjer):
+    ny = [1]    # Hver linje starter med 1
+    for j in range(len(forrige) -1):    # Tallene i midten
+        ny.append(forrige[j] + forrige[j +1])
+    if i > 0:
+        ny.append(1)    # Hver linje slutter med 1
+    print(*ny, sep=", ")    # Stjernenpakker ut listen sli at tallene skrives ut etter hverandre, 
+    # og sep=", " setter komma og mellomrom mellom
+    forrige = ny
