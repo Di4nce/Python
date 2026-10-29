@@ -30,3 +30,24 @@
 # ut 6%
  
 # Skriv ditt svar her
+with open("grupper.txt", mode="r", encoding="utf-8") as filen:
+    grupper = filen.readlines()
+
+liste_elementer = []
+
+with open("elementer.txt", mode="r", encoding="utf-8") as filen2:
+    for line in filen2:
+        try:
+            liste_elementer.append(line.strip())    # Må strippe for å fjerne mellomrom og \n
+        except ValueError:
+            print("Hoppet over en linje grunnet feil format eller tom linje")
+
+linjenummer = 0
+for linje in grupper:
+    linjenummer += 1
+    funnet = False
+    for tall in linje:
+        if tall in liste_elementer:
+            funnet = True
+    if funnet == True:
+        print(f"Funnet korrekt tall i linje: {linjenummer}")
