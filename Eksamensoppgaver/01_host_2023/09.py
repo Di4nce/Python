@@ -11,3 +11,23 @@
 # variabelen "dictionary" med linja oppgitt under: (3%)
 # nokkel_liste = list(dictionary.keys())
 # Skriv ditt svar her
+def lag_dictionary(liste):
+    dictionary = {}
+    for element in liste:
+        element_liste = element.split(":")
+        key = int(element_liste[0].strip())
+        value = int(element_liste[1].strip())
+        if key not in dictionary.keys():
+            dictionary[key] = value
+        else:
+            dictionary[key] = value + dictionary.get(key) # eller bare += value
+    return dictionary
+
+def sorter_print(dictionary):
+    # dict_sortert = dict(sorted(dictionary.items()))
+    # print(dict_sortert)   
+    # Denne ville teknisk sett virket, men løsningen nedenfor er nost riktigst opp mot pensum og for å få en fin liste
+    nokkel_liste = list(dictionary.keys())
+    nokkel_liste.sort()
+    for key in nokkel_liste:
+        print(key, ":", dictionary[key])
