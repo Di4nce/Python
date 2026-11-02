@@ -35,18 +35,22 @@ with open("grupper.txt", mode="r", encoding="utf-8") as filen:
 
 liste_elementer = []
 
-with open("elementer.txt", mode="r", encoding="utf-8") as filen2:
-    for line in filen2:
-        try:
+try:
+    with open("elementer.txt", mode="r", encoding="utf-8") as filen2:
+        for line in filen2:
+            if line.strip() == "":
+                continue
             liste_elementer.append(line.strip())    # Må strippe for å fjerne mellomrom og \n
-        except ValueError:
-            print("Hoppet over en linje grunnet feil format eller tom linje")
+except FileNotFoundError:
+    print("Feil fil")
 
 linjenummer = 0
 for linje in grupper:
     linjenummer += 1
     funnet = False
-    for tall in linje:
+    linje_strip = linje.strip()
+    linje_liste = linje_strip.split(",")
+    for tall in linje_liste:
         if tall in liste_elementer:
             funnet = True
     if funnet == True:
