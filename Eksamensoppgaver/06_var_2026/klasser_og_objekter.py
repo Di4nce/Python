@@ -17,7 +17,7 @@ class Rom:
             raise ValueError("Romnavn må starte med en bokstav")
         
         tall = int(komponenter[1])
-        self_romnavn = ny_verdi
+        self.romnavn = ny_verdi
 
 
     def __str__(self):
