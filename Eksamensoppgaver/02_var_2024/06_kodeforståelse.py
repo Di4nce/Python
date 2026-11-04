@@ -58,7 +58,7 @@
  
 # Skriv ditt svar her
 
-# Problem med stabel og refereanser, kan ikke legge til en hel liste
+# Problem med stabel og refereanser
 historikk = list()
 historikk.append([0, 0, 0, 0])
 fortsetter = True
@@ -71,10 +71,10 @@ while fortsetter:
         print("Du må velge en bryter 1, 2 eller 3!")
         continue
     tid = int(input("Skriv inn tidspunktet innslaget skjedde: "))
+    forrige_innslag = historikk[-1]
     if tid < forrige_innslag[0]:
         print("Du må skrive en større tid en tidligere")
         continue
-    forrige_innslag = historikk[-1]
     dette_innslaget = forrige_innslag
     dette_innslaget[0] = tid
     bryter_indeks = hvilken_bryter
