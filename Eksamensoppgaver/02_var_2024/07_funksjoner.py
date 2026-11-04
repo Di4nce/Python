@@ -13,11 +13,42 @@
 # å bruke funksjonen fra oppgave a), deretter finner alle toppene med funksjonen i oppgave c) og til
 # slutt skriver ut indeks og verdi for alle toppene. (5%)
 # Skriv ditt svar her
+# a)
+def sjekk_tall(tall):
+    if tall > -100 and tall < 100:
+        return True
+    else:
+        return False
 
+# b)
+temp = float(input("Skriv inn en temperatur: "))
+ok = sjekk_tall(temp)
+if ok:
+    print("Tallet er ok!")
+else:
+    print("Tallet er ikke ok")
 
+# c)
+def top(liste):
+    topper = []
+    for i in range(2, len(liste)-2):
+        if liste[i] > liste[i-1] and liste[i] > liste[i-2] and liste[i] > liste[i+1] and liste[i] > liste[i+2]:
+            topper.append(i)
+    return topper
 
-
+# d)
 # lista = [23, 25, 22, 29, 34, 32, 175, 26, 15, 12, 10, 12, 15, 13, -123, 14, 17, 16, 11]
  
 # if __name__ == "__main__":
 #     # Din kode for oppgave d) her
+
+ryddet_liste = []
+for i in lista:
+    ok = sjekk_tall(i)
+    if ok:
+        ryddet_liste.append(i)
+topper = top(ryddet_liste)
+verdier = []
+for i in topper:
+    verdier.append(ryddet_liste[i])
+print("Indeks til topper", topper, "og verdiene er", verdier)
