@@ -32,16 +32,6 @@
 #     if aaret%4 == 0:
 #         return True
 #     return False
- 
-# Flytt riktig kodebit til riktig sted for å skrive programmet. Rekkefølgen er viktig her. Å bruke riktig
-# kodebit er også viktig, det er ikke alle kodebitene over som skal brukes.
-# start_aar = int(input("Skriv inn startår: "))
-# slutt_aar = int(input("Skriv inn sluttår: "))
-# for aar in range(start_aar, slutt_aar+1):
-# -->if skuddaar(aar):
-# -->-->print(f"Året {aar} er et skuddår")
-# -->else:
-# -->-->print(f"Året {aar} er ikke et skuddår")
 
 #Oppgitt funksjon med samme markør for indentering som kodefragmentene du skal bruke i ditt
 # svar bruker:
@@ -53,3 +43,13 @@
 # -->if aaret%4 == 0:
 # -->-->return True
 # -->return False
+ 
+# Flytt riktig kodebit til riktig sted for å skrive programmet. Rekkefølgen er viktig her. Å bruke riktig
+# kodebit er også viktig, det er ikke alle kodebitene over som skal brukes. Svar:
+# start_aar = int(input("Skriv inn startår: "))
+# slutt_aar = int(input("Skriv inn sluttår: "))
+# for aar in range(start_aar, slutt_aar+1):
+# -->if skuddaar(aar):
+# -->-->print(f"Året {aar} er et skuddår")
+# -->else:
+# -->-->print(f"Året {aar} er ikke et skuddår")
