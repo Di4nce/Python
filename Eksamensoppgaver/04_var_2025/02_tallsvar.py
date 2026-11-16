@@ -1,19 +1,19 @@
-# a) Hva er tallet 37 i det binære tallsystemet?   .
+# a) Hva er tallet 37 i det binære tallsystemet?   00100101
  
 # b) Gitt følgende Python-script, hva skrives ut?
 # tall = 0 
 # for i in range(4): 
 #     tall += i 
-# print(tall)
+# print(tall) # 0 1 3 6 = 6 Skrives ut
 
 # c) Gitt følgende Python-script, hva skrives ut?
 # tall1 = 1
 # tall2 = 1
 # while tall2 < 6:
-#     tall3 = tall1 + tall2
-#     tall1 = tall2
-#     tall2 = tall3
-# print(tall2)
+#     tall3 = tall1 + tall2 # 2 3 5 8
+#     tall1 = tall2 # 1 2 3 5
+#     tall2 = tall3 # 2 3 5 8
+# print(tall2) # 8 blir skrevet ut
 
 # d) Gitt følgende Python-script, hva skrives ut?
 # liste = [8, 3, 6, 2, 1]
