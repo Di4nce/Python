@@ -14,3 +14,40 @@
 # brukeren få prøve på nytt uten at dette teller som et forsøk på å gjette tallet. (4%)
  
 # Skriv ditt svar her
+import random as r
+
+hemmeli = r.randint(1, 100)
+spill_i_gang = True
+runder = 0
+langt_unna = None
+
+def langt_unna_test(hemmeli, gjett, langt_unna):
+    if langt_unna is None:
+        pass
+    elif abs(hemmeli - gjett) > langt_unna:
+        print("Du er lenger unna enn sist")
+    elif abs(hemmeli - gjett) < langt_unna:
+        print("Du er nærmere enn sist")
+    else:
+        print("Du er like nærme som sist")
+
+while spill_i_gang:
+    try:
+        gjett = int(input("Gjett et tall mellom og inkludert 1 og 100: "))
+    except ValueError:
+        print("Du må skrive inn et heltall")
+        continue
+    if gjett > 100 or gjett < 1:
+        print("Du må skrive inn et tall mellom 1 og 100")
+        continue
+    runder += 1
+    if gjett < hemmeli:
+        print("Du har gjettet for lav")
+        langt_unna_test(hemmeli, gjett, langt_unna)
+    elif gjett > hemmeli:
+        print("Du har gjettet for høyt")
+        langt_unna_test(hemmeli, gjett, langt_unna)
+    else:
+        print(f"Du har gjettet riktig med {runder} runder, tallet var {hemmeli}.")
+        spill_i_gang = False
+    langt_unna = abs(hemmeli - gjett)
