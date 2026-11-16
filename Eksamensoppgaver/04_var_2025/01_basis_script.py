@@ -4,3 +4,10 @@
 # skrive ut resultatet. (6%)
  
 # Skriv ditt svar her
+
+lengde = float(input("Skriv inn side-lengden til pyramiden: "))
+hoyde = float(input("Skriv inn høyden til pyramiden: "))
+
+volum = lengde*lengde*hoyde     # Skal formelen egentlig være l*l*h / 3 ??
+
+print(f"Volumet til pyramiden er: {volum:.2f}")
