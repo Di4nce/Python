@@ -14,7 +14,7 @@
 #     print(liste)
  
 # Hva blir skrevet ut av den første print-setningen?
-# [4, 9] 
+# [4, 9]  # Husk å tell riktig!! Ikke glem å bruk riktig tall, sjekk to ganger.
  
 # Hva blir skrevet ut av den andre print-setningen?
 # [4, 16, 8, 27, 64]
