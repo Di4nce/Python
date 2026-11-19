@@ -29,7 +29,7 @@ with open("passeringer.txt", mode="r", encoding="Utf-8") as filen:
     stasjoner = list()
     csv_filen = csv.reader(filen, delimiter=";")
     for verdier in csv_filen:
-        passeringer = int(verdier[1].strip()) # Husk rekkefølgen på dettee
+        passeringer = int(verdier[1].strip()) # Husk rekkefølgen på dette
         passeringer_totalt += passeringer
         antall_passeringer.append(passeringer)
         datoer.append(verdier[2].strip())
