@@ -18,6 +18,47 @@
  
  
 # Skriv ditt svar her
+import csv
+
+with open("passeringer.txt", mode="r", encoding="Utf-8") as filen:
+    filen.readline()
+    stasjonsnavn = list()
+    antall_passeringer = list()
+    passeringer_totalt = 0
+    datoer = list()
+    stasjoner = list()
+    csv_filen = csv.reader(filen, delimiter=";")
+    for verdier in csv_filen:
+        passeringer = int(verdier[1].strip()) # Husk rekkefølgen på dettee
+        passeringer_totalt += passeringer
+        antall_passeringer.append(passeringer)
+        datoer.append(verdier[2].strip())
+        stasjoner.append(verdier[0].strip())
+print(f"Totalt antall passeringer er {passeringer_totalt}") # Svar å oppgave a)
+
+passering_pa_dato = 0
+sjekk_dato = input("Skriv inn dato som skal sjekkes (ÅÅÅÅ-MM-DD): ")
+indeks = 0
+for dato in datoer:
+    if sjekk_dato == dato:
+        passering_pa_dato += antall_passeringer[indeks]
+    indeks += 1
+print(f"På datoen {sjekk_dato} var det totalt {passering_pa_dato} passeringer")
+
+stasjon = {}
+for enkelt_stasjon in stasjoner:
+    stasjon[enkelt_stasjon] = 0
+indeks = 0
+for enkelt_stasjon in stasjoner:
+    stasjon[enkelt_stasjon] += antall_passeringer[indeks]
+    indeks += 1
+for enkelt_stasjon in stasjon:
+    print(f"{enkelt_stasjon}: {stasjon[enkelt_stasjon]}")
+
+
+
+
+
 
 
 # Eksempel-datafil. Dette er bare et lite utdrag fra den ekte fila, en løsning som bare virker for dette
