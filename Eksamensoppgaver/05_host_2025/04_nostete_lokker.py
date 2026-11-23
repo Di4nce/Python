@@ -9,3 +9,23 @@
 # alle elementene i lista. (8%) 
 
 # Skriv svaret ditt her. Endringer blir lagret automatisk.
+def sjekk_gjennomsnitt(liste, antall_elementer):
+    hoyeste_snitt = 0
+    if len(liste) < antall_elementer:
+        summen = 0
+        for tall in liste:
+            summen += tall
+        hoyeste_snitt = sum / len(liste)
+    else:
+        index_tall = 0  # Må huske hvilket tall man er på
+        for tall in range(len(liste)-antall_elementer+1):
+            index = index_tall  # For midlertidig telling av de neste tallene fra hovdtallet
+            ny_sum = 0
+            for i in range(antall_elementer):
+                ny_sum += liste[index]
+                index += 1
+            ny_snitt =  ny_sum / antall_elementer
+            if ny_snitt > hoyeste_snitt:
+                hoyeste_snitt = ny_snitt
+            index_tall += 1
+    return hoyeste_snitt
