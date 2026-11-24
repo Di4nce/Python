@@ -10,5 +10,7 @@
 # print(tall)     #2 
 
 # Hva blir skrevet ut av linja markert #1 (print-setningen inne i funksjonen "funksjon")?:   (4%)
+# 16
 
 # Hva blir skrevet ut av linja markert #2?:    (4%)
+# 12
