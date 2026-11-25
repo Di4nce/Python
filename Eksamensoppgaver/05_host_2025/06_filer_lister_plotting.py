@@ -1,4 +1,5 @@
-# Gitt en serie med målinger fra en strøm-måler lagret på følgende format: MålerID; Dato; Klokkeslett; Verdi
+# Gitt en serie med målinger fra en strøm-måler lagret på følgende format: 
+# MålerID; Dato; Klokkeslett; Verdi
 # M1; 2025-11-20; 01.00.00; 7.3
 # M1; 2025-11-20; 01.10.00; 8.9
 # M1; 2025-11-20; 01.20.00; 12.3
@@ -23,3 +24,42 @@
 # ved å hoppe over linja og skrive ut at det er en feil i den linja. (3%)
 
 # Skriv svaret ditt her. Endringer blir lagret automatisk.
+
+from datetime import datetime
+import csv
+import matplotlib.pyplot as plt
+
+try:
+    with open("strommalinger.txt", "r", encoding = "Utf-8") as filen:
+        filen.readline()
+        dato_tid = list()
+        verdier = list()
+        csv_filen = csv.reader(filen, delimiter=";")
+        linje_nr = 1
+        for linje in csv_filen:
+            linje_nr += 1 # Tar den innledningsvis siden første linje er en header
+            try:
+                verdi = float(linje[3].strip())
+                dato = linje[1].strip()
+                tid = (linje[2].strip()).replace(".", ":")
+                dato_tid_str = dato + " " + tid
+                dato_tid_objekt = datetime.strptime(dato_tid_str, "%Y-%m-%d %H:%M:%S")
+                verdier.append(verdi)
+                dato_tid.append(dato_tid_objekt)
+            except:
+                print(f"Feil datoformat i linje {linje_nr}, hoppet over")
+except (FileNotFoundError, IOError):
+    print("Feil filnavn eller feil under lesing fra fil")
+    exit()
+
+
+verdi_max = max(verdier)
+verdi_min = min(verdier)
+gjennomsnitt = sum(verdier) / len(verdier)
+
+print(f"Laveste verdi er: {verdi_min}")
+print(f"Høyeste verdi er: {verdi_max}")
+print(f"Gjennomsnitt av verdiene er: {gjennomsnitt}")
+
+plt.plot(dato_tid, verdier)
+plt.show()
