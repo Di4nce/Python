@@ -18,10 +18,11 @@
 #     for element in byliste:
 #         komponenter = element.split(":")
 #         antall = int(komponenter[1].strip())
-#         sum_for_hver_by[komponenter[0]] = sum_for_hver_by[komponenter[0]] + antall
-        
-#     for i in range(len(sum_for_hver_by)):
-#        print(sum_for_hver_by[i])
+# Her må lages en if setning for å sjekke om key allerde er oppdatet, for det vil bli feil under når key ikke er allerede opprettet.        
+#         sum_for_hver_by[komponenter[0]] = sum_for_hver_by[komponenter[0]] + antall 
+
+#     for i in range(len(sum_for_hver_by)): # For by in sum_for_hver by
+#        print(sum_for_hver_by[i])          # print(f"{by}: {sum_for_hver_by[by]}")
     
 # if __name__ == "__main__":
 #     skriv_ut_sum(liste)
