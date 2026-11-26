@@ -5,19 +5,19 @@
 # punkt2 = Punkt(5, 10)
 # punkt1.y_koordinat = 4
 # print(punkt1) 
-# Hva blir skrevet ut av siste linje her?  (  ,   )
+# Hva blir skrevet ut av siste linje her?  ( 9 , 4  )
 
 # punkt1 = Punkt(9, 2)
 # punkt2 = Punkt(5, 10)
 # punkt3 = punkt1
 # flytt_til_midten(punkt1, punkt2)
 # print(punkt3)
-# Hva blir skrevet ut av siste linje her?  (  ,   )
+# Hva blir skrevet ut av siste linje her?  ( 7.0 , 6.0  )
 
 # Gitt følgende script:
 # variabel = set([2, 4, 2, 3])
 # print(sum(variabel))
-# Hva blir skrevet ut her?
+# Hva blir skrevet ut her? 9 (2+4+3)
 
 # class Punkt:    
 #     # Konstruktør (engelsk Constructor)
