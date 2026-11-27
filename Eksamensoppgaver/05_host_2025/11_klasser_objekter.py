@@ -15,8 +15,51 @@
 
 # Skriv svaret ditt her. Endringer blir lagret automatisk.
 
+from enkelt_kortspill import Kortstokk
+from enkelt_kortspill import Spillkort
 
+stokken = Kortstokk()
+stokken.lag_stokken()
+stokken.stokk()
 
+kort_pa_bord = {"En": [], "To" : [], "Tre": [], "Fire": [], "Fem": [], "Seks": [], "Syv" : [], "Åtte" : [], "Ni": []}
+
+for plass in kort_pa_bord:
+    kort_pa_bord[plass].append(stokken.trekk())
+
+i_spill = True
+
+while i_spill:
+    i_spill = False # Endres til True om kort legges ut denne runden, ellers avsluttes spillet
+    for plass in kort_pa_bord:
+        for plass2 in kort_pa_bord:
+            if plass2 != plass and (kort_pa_bord[plass][-1].verdi + kort_pa_bord[plass2][-1].verdi) == 11:
+                if len(stokken.kortene) > 0:
+                    kort_pa_bord[plass2].append(stokken.trekk())
+                if len(stokken.kortene) > 0:
+                    kort_pa_bord[plass].append(stokken.trekk())
+                i_spill = True
+            elif (kort_pa_bord[plass][-1].verdi > 10) and (kort_pa_bord[plass2][-1].verdi > 10):
+                for plass3 in kort_pa_bord:
+                    if plass3 != plass and plass3 != plass2 and kort_pa_bord[plass3][-1].verdi > 10:
+                        if len(stokken.kortene) > 0:
+                            kort_pa_bord[plass3].append(stokken.trekk())
+                        if len(stokken.kortene) > 0:
+                            kort_pa_bord[plass2].append(stokken.trekk())
+                        if len(stokken.kortene) > 0:
+                            kort_pa_bord[plass].append(stokken.trekk())
+                        i_spill = True
+    if len(stokken.kortene) == 0:
+        print("Kabalen gikk opp :-D")
+        i_spill = False         
+
+    
+#     vinnere = kaare_en_vinner(spillerne)
+    
+#     while len(vinnere) > 1:
+#         for vinner in vinnere:
+#             vinner.kort = stokken.trekk()
+#         vinnere = kaare_en_vinner(vinnere)
 
 # import random 
 # # Klasse for en spiller

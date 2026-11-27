@@ -1,7 +1,8 @@
 # Gitt klassen Land fra løsningsforslaget til øving 9:
+# from datetime import datetime
 
 # class Land:
-#     def __init__(self, navn, befolkning=None, areal=None, grunnlagt):
+#     def __init__(self, grunnlagt, navn, befolkning=None, areal=None):
 #         self.navn = navn
 #         self.befolkning = befolkning
 #         self.areal = areal
@@ -20,7 +21,12 @@
 #     def befolkningstetthet(self):
 #         if self.befolkning is None or self.areal is None:
 #             return 0
-#         return self.befolkning/self.areal  
+#         return self.befolkning/self.areal
+
+#     def ar_siden_grunnlagt(self):
+#       ar = datetime.now().year    # Trenger bare en datetime når vi har importert og from ovenfor
+#       antall_ar = ar - self.grunnlagt
+#       return antall_ar
 
 # Deloppgaver
 # 1. Legg til en egenskap "grunnlagt" som inneholder hvilket år landet ble grunnlagt. Denne
