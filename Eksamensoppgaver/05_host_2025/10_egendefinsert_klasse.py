@@ -1,10 +1,11 @@
 # Gitt klassen Land fra løsningsforslaget til øving 9:
 
 # class Land:
-#     def __init__(self, navn, befolkning=None, areal=None):
+#     def __init__(self, navn, befolkning=None, areal=None, grunnlagt):
 #         self.navn = navn
 #         self.befolkning = befolkning
 #         self.areal = areal
+#         self.grunnlagt = grunnlagt
         
 #     # Oppgave b)
 #     def __str__(self):
